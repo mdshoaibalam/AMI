@@ -23,52 +23,40 @@ var app= angular.module('mytodoApp',['ngAnimate',
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+       .when('/home', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
 
 
       })
-      .when('/about', {
+      .when('/gallery', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
   
 
       })
-      .when('/login',{
-        templateUrl:'views/login.html',
-        controller:'loginCtlr',
-        controllerAs:'loginCtlr'
+      .when('/service',{
+        templateUrl:'views/services.html',
+        controller:'serviceCtlr',
+        controllerAs:'serviceCtlr'
       })
-       .when('/logout',{
-        resolve:{
-          'check':function(localStorageService){
-            localStorageService.remove('user');
-          }
-        },
-        templateUrl:'views/logout.html',
-        controller:'logoutontroller',
-        controllerAs:'logoutCtlr'
+      .when('/mission',{
+        templateUrl:'views/mission.html',
+        controller:'serviceCtlr',
+        controllerAs:'serviceCtlr'
       })
-
-      .when('/browseDevice',{
-          resolve:{
-          'check':function($location,localStorageService){
-            var temp= localStorageService.get('user');
-            if(temp===null){
-              $location.path('/login');
-            }            
-          }
-        },
-        templateUrl:'views/browseDevice.html',
-        controller:'browseController',
-        controllerAs:'browseCtlr',
-      
-      })
-      .when('/map/:country/:state/:city',{
-        templateUrl:'views/mapping.html',
-        controller:'MapCtlr'
-      })
+      .when('/contact',{
+        templateUrl:'views/contact-us.html',
+        controller:'serviceCtlr',
+        controllerAs:'serviceCtlr'
+      })  
       .otherwise({
-        redirectTo: '/'
-      });
+        templateUrl:'404.html'
+      });   
+      // .otherwise({
+      //   redirectTo: '/'
+      // });
   });
 
 
