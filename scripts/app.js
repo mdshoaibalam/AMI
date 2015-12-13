@@ -51,12 +51,12 @@ var app= angular.module('mytodoApp',['ngAnimate',
         controller:'serviceCtlr',
         controllerAs:'serviceCtlr'
       })  
-      .otherwise({
-        templateUrl:'404.html'
-      });   
-      // .otherwise({
-      //   redirectTo: '/'
-      // });
+      //.otherwise({
+      //  templateUrl:'404.html'
+      // });   
+       .otherwise({
+         redirectTo: '/'
+       });
   });
 
 
