@@ -1,2 +1,0 @@
-# AMI
-ami Service
